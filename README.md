@@ -43,8 +43,16 @@
 - [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
 
 ## ✨ 참여자
-- @dldush
-- @uoaheu
-- @밂
+<table>
+  <tr>
+  <td align="center"><a href="https://github.com/dldush"><img src="https://avatars.githubusercontent.com/dldush" width="100px;" alt=""/><br />
+      <img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=leecarus0301" widt="100px">
+      <br /><sub><b>이연호</b></sub></a><br /><sub><b>소개</b><br/><span>근본충</span>
+    
+  <td align="center"><a href="https://github.com/uoaheu"><img src="https://avatars.githubusercontent.com/uoaheu" width="100px;" alt=""/><br />
+      <img src="http://mazassumnida.wtf/api/mini/generate_badge?boj=nayeon058" widt="100px">
+      <br /><sub><b>홍나연</b></sub></a><br /><sub><b>소개</b><br/><span>딩딩딩</span>
+</table><br/>
+
 
 
