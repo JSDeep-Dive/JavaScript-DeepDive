@@ -37,10 +37,9 @@
 
 ## 📚 참고 자료
 - 『모던 자바스크립트 딥다이브』 – 이웅모 저
+- [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
 - [MDN Web Docs](https://developer.mozilla.org/ko/)
 - [JavaScript.info](https://javascript.info/)
-- 『모던 자바스크립트 튜토리얼』
-- [모던 JavaScript 튜토리얼](https://ko.javascript.info/)
 
 ## ✨ 참여자
 <table>
