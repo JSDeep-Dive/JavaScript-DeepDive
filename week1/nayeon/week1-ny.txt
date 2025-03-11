@@ -1,1 +1,59 @@
-test
+strict mode란
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Strict_mode
+* 가끔 엄격하지 않은 기본값을 " 느슨한 모드(sloppy mode)"라고 부르기도 한다. 
+(공식적인 용어는 아니지만 혹시 모르니 알아두면 좋겠다.)
+
+- strict mode 적용 방법
+: 전역 최상단 혹은 함수 내의 최상단에 "use strict;" 추가하기
+
+  ex)
+  // 함수 단위로 strict mode 적용
+  function test() {
+    'use strict';
+    x = 10; // ReferenceError: x is not defined
+  }
+  foo();
+  ---
+  function test() {
+    x = 10; // 에러 발생 X
+    'use strict';
+  }
+  foo();
+  ---
+  -> 코드의 상단에 strict mode를 넣지 않으면 제대로 동작 X
+
+- 특징
+  - JavaScript 실행 방식 변경
+  : "use strict";는 개발/배포 환경과 관계없이 항상 적용된다. (ES6 모듈과 클래스에서는 기본적으로 strict mode가 활성화됨.)
+  - 실행 중 코드 오류를 사전에 방지
+  : 암묵적 전역 변수 사용, this의 모호한 동작, with 문 사용 등을 금지하여 예측 가능한 실행을 보장한다.
+
+- 예시
+  - x = 10; // ReferenceError: x is not defined
+  - 기존 JavaScript에서 암묵적으로 허용되던 위험한 코드 패턴을 차단하고, 예측 가능한 동작을 보장하도록 강제하는 기능을 수행한다.
+
+ESLint와 같은 린트 도구 사용 시에도 strict mode와 유사한 효과를 얻을 수 있다.
+* 린트 도구 : 소스 코드를 분석하여 프로그램 오류, 버그, 스타일 오류, 의심스러운 구조체에 표시(flag)를 달아놓기 위한 도구
+
+-> ESLint는 코드 스타일 및 베스트 프랙티스를 강제하는 정적 분석 도구로
+strict mode처럼 일부 코드 오류를 방지할 수 있지만, 실제 실행 중 오류를 감지하는 기능은 없다는 점 참고 !
+
+
+ESLint란
+- 잘못된 코드 스타일 경고
+- 일부 오류의 경우 자동 수정 가능
+- 팀 내 코딩 스타일 통일 및 코드 품질 유지
+ex) var x = 10; // 'var' 대신 'let' 또는 'const' 사용 권장
+
+그렇다면, strict mode와 ESLint는 무슨 차이가 있을까 ?
+
+앞서 보여준 예시를 살펴 보자
+x = 10;
+console.log(x);
+-> ESLint에서 에러가 발생하지 않는 경우 존재
+하지만 "no-undef"(정의되지 않은 변수 사용 금지) 규칙을 활성화하면 오류 발생
+
+즉, ESLint의 no-undef를 활성화하면 strict mode 없이도 x = 10;을 막을 수 있다.
+그렇지만  ESLint는 실행 전에 정적 분석을 하는 도구라서 strict mode처럼 실제 실행 중 오류를 발생시키지는 않는다.
+따라서, 안전성을 위해 "use strict";와 함께 사용하는 게 좋다 !
